@@ -157,10 +157,44 @@ function getModalContent(params) {
 
     if (params.form != undefined){
         HTML += getForm(params.form);
+    }else{
+        HTML += getInputs(params.inputs);
     }
+
+    if (params.content != undefined){
+        HTML += `<hr>`;
+        HTML += params.content;
+    };
+
     return HTML;
 }
 
 function getForm(params) {
-    
+    if (params.id == undefined){
+        params.id = "form";
+    }
+
+    if (params.action == undefined){
+        params.action = "#";
+    }
+
+    if (params.method == undefined){
+        params.method = "POST";
+    }
+
+    const form = `
+        <form id="${params.id}" action="${params.action}" method="${params.method}">
+            ${getInputs(params.inputs)}
+        </form>
+    `;
+
+    return form;
+}
+
+function getInputs(params) {
+    if (params == undefined){
+        return `No inputs provided.`;
+    }
+
+    // Todo: generate Inputs
 }
