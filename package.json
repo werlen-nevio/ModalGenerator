@@ -1,0 +1,18 @@
+{
+  "name": "modalgenerator",
+  "version": "1.0.0",
+  "description": "Create a modal with bootstrap and jquery",
+  "main": "index.html",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "keywords": ["modal", "generator", "bootstrap", "jquery", "javascript"],
+  "author": "werlen-nevio",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.15.0",
+    "eslint": "^9.15.0",
+    "eslint-plugin-jquery": "^1.5.1",
+    "globals": "^15.12.0"
+  }
+}
