@@ -9,89 +9,217 @@
 
     <body>
         <div class="container mt-5">
-            <h1 class="text-center">Generated Modal Example</h1>
+            <h1 class="text-center">Generated Modal Examples</h1>
 
             <div class="text-center mt-3">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Open Modal
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">
+                    Open Contact Modal
+                </button>
+            </div>
+
+            <div class="text-center mt-3">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#feedbackModal">
+                    Open Feedback Modal
+                </button>
+            </div>
+
+            <div class="text-center mt-3">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    Open Login Modal
+                </button>
+            </div>
+
+            <div class="text-center mt-3">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal">
+                    Open Register Modal
+                </button>
+            </div>
+
+            <div class="text-center mt-3">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#privacyModal">
+                    Open Privacy Policy Modal
                 </button>
             </div>
         </div>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        This is the content of the modal.
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save Changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container mt-5">
-            <h1 class="text-center">Generated Modal Example 2</h1>
-
-            <div class="text-center mt-3">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                    Open Modal 2
-                </button>
-            </div>
-        </div>
-
-        <div ID="ExampleGeneratedModal" class="generate-modal" modalParams='{
-            "id": "exampleModal2",
-            "title": "Modal Title 2",
+        <div ID="ExampleGeneratedModal1" class="generate-modal" modalParams='{
+            "id": "contactModal",
+            "title": "Contact Us",
             "form": {
-                "id": "form",
-                "action": "javascript:void(0)",
+                "id": "contactForm",
+                "action": "/contact",
                 "method": "POST"
             },
             "inputs": [
                 {
+                    "id": "fullName",
                     "type": "text",
-                    "label": "Name",
-                    "placeholder": "Enter your name"
+                    "label": "Full Name",
+                    "placeholder": "Enter your full name"
                 },
                 {
+                    "id": "email",
                     "type": "email",
                     "label": "Email",
-                    "placeholder": "Enter your email"
+                    "placeholder": "Enter your email address"
                 },
                 {
+                    "id": "message",
+                    "type": "textarea",
+                    "label": "Message",
+                    "placeholder": "Write your message"
+                }
+            ],
+            "content": "Please fill out the form below to contact us.",
+            "saveButton": {
+                "text": "Send",
+                "class": "btn-success",
+                "callback": "console.log(`Message sent`)",
+                "id": "sendButton"
+            },
+            "closeButton": {
+                "text": "Cancel",
+                "class": "btn-secondary",
+                "callback": "console.log(`Message canceled`)",
+                "id": "cancelButton"
+            }
+        }'></div>
+        
+        <div ID="ExampleGeneratedModal2" class="generate-modal" modalParams='{
+            "id": "feedbackModal",
+            "title": "Give Feedback",
+            "form": {
+                "id": "feedbackForm",
+                "action": "/feedback",
+                "method": "POST"
+            },
+            "inputs": [
+                {
+                    "id": "rating",
+                    "type": "number",
+                    "label": "Rating (1-5)",
+                    "placeholder": "Enter a rating"
+                },
+                {
+                    "id": "comments",
+                    "type": "textarea",
+                    "label": "Comments",
+                    "placeholder": "Share your feedback"
+                }
+            ],
+            "content": "We appreciate your feedback to improve our services.",
+            "saveButton": {
+                "text": "Submit",
+                "class": "btn-primary",
+                "callback": "console.log(`Feedback submitted`)",
+                "id": "submitButton"
+            },
+            "closeButton": {
+                "text": "Close",
+                "class": "btn-secondary",
+                "callback": "console.log(`Feedback modal closed`)",
+                "id": "closeFeedbackButton"
+            }
+        }'></div>
+        
+        <div ID="ExampleGeneratedModal3" class="generate-modal" modalParams='{
+            "id": "loginModal",
+            "title": "Login",
+            "form": {
+                "id": "loginForm",
+                "action": "/login",
+                "method": "POST"
+            },
+            "inputs": [
+                {
+                    "id": "username",
+                    "type": "text",
+                    "label": "Username",
+                    "placeholder": "Enter your username"
+                },
+                {
+                    "id": "password",
                     "type": "password",
                     "label": "Password",
                     "placeholder": "Enter your password"
                 }
             ],
-            "content": "This is the content of the modal.",
+            "content": "Please log in to access your account.",
             "saveButton": {
-                "text": "Save Changes Button",
+                "text": "Login",
                 "class": "btn-primary",
-                "callback": "console.log(`Save button clicked`)",
-                "id": "saveButton"
-            },
-            "deleteButton": {
-                "text": "Delete Button",
-                "class": "btn-danger",
-                "callback": "console.log(`Delete button clicked`)",
-                "id": "deleteButton"
+                "callback": "console.log(`Logged in successfully`)",
+                "id": "loginButton"
             },
             "closeButton": {
-                "text": "Close Button",
+                "text": "Cancel",
                 "class": "btn-secondary",
-                "callback": "console.log(`Close button clicked`)",
-                "id": "closeButton"
+                "callback": "console.log(`Login canceled`)",
+                "id": "cancelLoginButton"
             }
         }'></div>
 
+        <div ID="ExampleGeneratedModal4" class="generate-modal" modalParams='{
+            "id": "registerModal",
+            "title": "Register",
+            "form": {
+                "id": "registerForm",
+                "action": "/register",
+                "method": "POST"
+            },
+            "inputs": [
+                {
+                    "id": "newUsername",
+                    "type": "text",
+                    "label": "Username",
+                    "placeholder": "Choose a username"
+                },
+                {
+                    "id": "newEmail",
+                    "type": "email",
+                    "label": "Email",
+                    "placeholder": "Enter your email"
+                },
+                {
+                    "id": "newPassword",
+                    "type": "password",
+                    "label": "Password",
+                    "placeholder": "Choose a password"
+                }
+            ],
+            "content": "Register to create a new account.",
+            "saveButton": {
+                "text": "Register",
+                "class": "btn-success",
+                "callback": "console.log(`Registered successfully`)",
+                "id": "registerButton"
+            },
+            "closeButton": {
+                "text": "Cancel",
+                "class": "btn-secondary",
+                "callback": "console.log(`Registration canceled`)",
+                "id": "cancelRegisterButton"
+            }
+        }'></div>
+
+        <div ID="ExampleGeneratedModal5" class="generate-modal" modalParams='{
+            "id": "privacyModal",
+            "title": "Privacy Policy",
+            "content": "By using our service, you agree to our Privacy Policy.",
+            "saveButton": {
+                "text": "Accept",
+                "class": "btn-primary",
+                "callback": "console.log(`Privacy policy accepted`)",
+                "id": "acceptButton"
+            },
+            "closeButton": {
+                "text": "Decline",
+                "class": "btn-secondary",
+                "callback": "console.log(`Privacy policy declined`)",
+                "id": "declineButton"
+            }
+        }'></div>
+        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
         <script src="src/main.js"></script>
